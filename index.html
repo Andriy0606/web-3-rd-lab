@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyCar App</title>
+
+  <link rel="stylesheet" href="./css/custom.css" />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
+
+  <!-- UUID library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
+
+
+</head>
+
+<body class="bg-light">
+  <div class="container p-3">
+    <div class="row mb-3">
+      <h1 class="text-center">My cars</h1>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mt-2 form-column">
+        <form id="add_form" class="bg-light">
+          <h3 class="mb-3">Create card</h3>
+          <div class="mb-3">
+            <label for="title_input" class="form-label">Car name</label>
+            <input type="text" class="form-control" id="title_input" />
+          </div>
+          <div class="mb-3">
+            <label for="description_input" class="form-label">Engine power</label>
+            <input type="text" class="form-control" id="description_input" />
+          </div>
+          <div class="mb-3">
+            <label for="speed_input" class="form-label">Max Speed</label>
+            <input type="number" class="form-control" id="speed_input" />
+          </div>
+          <div class="mb-3">
+            <label for="price_input" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price_input" />
+          </div>
+          <button id="submit_button" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <div class="mt-5">
+          <h4 class="mb-3">Find cards</h4>
+          <input id="find_input" type="text" class="form-control" />
+          <button id="find_button" type="button" class="btn btn-primary mt-4">Find</button>
+          <button id="cancel_find_button" type="button" class="btn btn-danger mt-4">Cancel</button>
+          <button id="count_price_button" type="button" class="btn btn-success mt-4">Count Price</button>
+          <button id="sort_price_button" type="button" class="btn btn-warning mt-4">Sort by Price</button> <!-- Нова кнопка -->
+          <div id="total_price" class="mt-3"></div>
+        </div>
+
+      </div>
+
+      <ul id="items_container" class="col-md-4 mt-5 mt-md-2 mx-auto"></ul>
+
+      <div class="col-md-4">
+        <div class="drop-container delete-section" id="drop_container">
+          <div class="text-center">
+            <img class="delete-section__icon mb-4" src="./assets/basket.svg" alt="basket" />
+            <div>Drop here to delete</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
